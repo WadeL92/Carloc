@@ -6,10 +6,10 @@
 <head>
   <meta charset="utf-8">
   <title>Liste Vehicule de Location</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/cssListe.css">
 </head>
 <body>
-    <section id="cars"
+    <section id="cars">
         <h1 class="section_title">NOS VEHICULE DE LOCATION</h1>
         <div class="images">
             <ul>
@@ -36,5 +36,6 @@
 			?>
             </ul>
         </div>
+	</section>
 </body>
 </html>

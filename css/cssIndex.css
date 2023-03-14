@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+body{
+  display: flex;
+  justify-content:center;
+  flex-direction: columns;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+}
+form {
+  background-color: #fff;
+  padding: 40px 60px;
+  border-radius: 10px;
+  min-width: 300px;
+}
+form .inputs {
+  display: flex;
+  flex-direction: column;
+}
+form h1 {
+    text-align: center;
+    font-size: 50px;
+}
+form .inputs input[type='text'], input[type='password']{
+  padding: 15px;
+  border:none;
+  border-radius: 5px;
+  background-color:#f2f2f2;
+  outline:none;
+  margin-bottom: 15px;
+}
+form button{
+  padding: 15px 25px;
+  border-radius: 5px;
+  border:none;
+  font-size: 15px;
+  color: #fff;
+  background-color: #eb7371;
+  outline:none;
+  cursor:pointer;
+}
+form img{
+  width: 350px;
+  height: 250px;
+}
+form p{
+  font-size: 15px;
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+}
+form button:hover{
+  background-color:#eb7384;
+  color:#fff;
+}

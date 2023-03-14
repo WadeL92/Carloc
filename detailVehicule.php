@@ -1,3 +1,10 @@
+<?php
+require "Modele/VehiculeDb.php";
+//recherche l'id du véhicule
+$idVehicule = $_REQUEST["id"];
+$classVehicule = new VehiculeDb();
+$infosVehicule = $classVehicule->getVehicule($idVehicule);
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -9,65 +16,67 @@
     <section id="details"
         <h1 class="details_title">DETAILS DU VEHICULE</h1>
     </section>
-    <img src="images/car_aston.jpg">
-    <main>
-        <section id="car">
+    <?php
+    echo "<img src='images/".$infosVehicule['image']."'>";
+    echo "<main>
+        <section id='car'>
             <h2>Fiche Technique</h2>
             <table>
                 <tr>
                     <th>Constructeur</th>
-                    <td>Aston Martin</td>
+                    <td>".$infosVehicule['marque']."</td>
                 </tr>
                 <tr>
                     <th>Modèle</th>
-                    <td>DBX</td>
+                    <td>".$infosVehicule['modele']."</td>
                 </tr>
                 <tr>
                     <th>Année</th>
-                    <td>2020</td>
+                    <td>".$infosVehicule['annee']."</td>
                 </tr>
                 <tr>
                     <th>Couleur</th>
-                    <td>Noir</td>
+                    <td>".$infosVehicule['couleur']."</td>
                 </tr>
                 <tr>
                     <th>Type de Transmission</th>
-                    <td>Automatique</td>
+                    <td>".$infosVehicule['transmission']."</td>
                 </tr>
                 <tr>
                     <th>Carburant</th>
-                    <td>Essence</td>
+                    <td>".$infosVehicule['carburant']."</td>
                 </tr>
             </table>
         </section>
-        <section id="specs">
+        <section id='specs'>
             <h2>Performances</h2>
             <table>
                 <tr>
                     <th>Moteur</th>
-                    <td>6.3L 4-cylindres</td>
+                    <td>".$infosVehicule['moteur']."</td>
                 </tr>
                 <tr>
                     <th>Chevaux</th>
-                    <td>672 ch @ 6,000 rpm</td>
+                    <td>".$infosVehicule['chevaux']."</td>
                 </tr>
                 <tr>
                     <th>Couple</th>
-                    <td>650 Nm @ 1,700-5,500 rpm</td>
+                    <td>".$infosVehicule['couple']."</td>
                 </tr>
                 <tr>
                     <th>Vitesse Max</th>
-                    <td>372 Km/h</td>
+                    <td>".$infosVehicule['vitesse']." Km/h</td>
                 </tr>
                 <tr>
                     <th>Dimensions (l x L x H)</th>
-                    <td>535.7 cm x 114.9 cm x 152.7 cm</td>
+                    <td>".$infosVehicule['dimLarg']." cm x ".$infosVehicule['dimLong']." cm x ".$infosVehicule['dimH']." cm</td>
                 </tr>
                 <tr>
                     <th>Poids</th>
-                    <td>2,221 Kg</td>
+                    <td>".$infosVehicule['poids']." Kg</td>
                 </tr>
             </table>
         </section>
-    </main>
+    </main>";
+    ?>
 </body>

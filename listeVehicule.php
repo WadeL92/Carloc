@@ -30,7 +30,7 @@
 						} else {
 							echo "<span>Non disponible</span>";
 						}
-						echo "<a href=vehicule.php?id=".$vehicule['id'].">Louer ce vehicule</a>";
+						echo "<a href=detailVehicule.php?id=".$vehicule['id'].">Détails</a>";
 					echo "</li>";
 				}
 			?>

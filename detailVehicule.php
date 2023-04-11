@@ -1,4 +1,6 @@
 <?php
+session_start();
+echo "Test".$_SESSION["idUtil"];
 require "Modele/VehiculeDb.php";
 //recherche l'id du véhicule
 $idVehicule = $_REQUEST["id"];
@@ -13,8 +15,8 @@ $infosVehicule = $classVehicule->getVehicule($idVehicule);
   <link rel="stylesheet" href="css/cssDetail.css">
 </head>
 <body>
-    <section id="details"
-        <h1 class="details_title">DETAILS DU VEHICULE</h1>
+    <section id="details">
+        <h1 class="details_title"> DETAILS DU VEHICULE</h1>
     </section>
     
     <?php
@@ -58,11 +60,11 @@ $infosVehicule = $classVehicule->getVehicule($idVehicule);
                 </tr>
                 <tr>
                     <th>Chevaux</th>
-                    <td>".$infosVehicule['chevaux']."</td>
+                    <td>".$infosVehicule['chevaux']." Ch</td>
                 </tr>
                 <tr>
                     <th>Couple</th>
-                    <td>".$infosVehicule['couple']."</td>
+                    <td>".$infosVehicule['couple']." Nm</td>
                 </tr>
                 <tr>
                     <th>Vitesse Max</th>
@@ -79,18 +81,21 @@ $infosVehicule = $classVehicule->getVehicule($idVehicule);
             </table>
         </section>
         
-    <div class='bouttons'>
-    "<?php if($dispo==1){
-        echo "<button class='validate-button'>Réserver ce véhicule</button>";
+    <div class='bouttons'>" ;
+    if ($infosVehicule['disponible']==1){
+        echo "<div class='validate-button'>
+                    <a href=reservationVehicule.php?id=".$idVehicule.">Réserver ce véhicule</a>
+              </div>";
     }
     else{
-        echo "<button class='annul-button'>Annuler la réservation</button>";
+        echo "<div class='annul-button'>
+                <a href=annuler.php?id=".$idVehicule.">Annuler la réservation</a>
+            </div>";
     }
     ?>
-    <button class='return-button'>Retour</button>
-    <button class='validate-button'>Réserver ce véhicule</button>
-    <button class='annul-button'>Annuler la réservation</button>
+        <div class='return-button'>
+            <a href=listeVehicule.php>Retour</a>
+        </div>
     </div>
-    </main>"
-    ?>
+    </main>
 </body>
